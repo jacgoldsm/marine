@@ -35,7 +35,7 @@ ui <- semanticPage(
           column_gap = "5%",
           min_cell_width = "20%",
           max_cell_width = "20%"),
-          style = "font-family: font-family: Helvetica, sans-serif;
+          style = "font-family:Helvetica, sans-serif;
                    font-size:1.1em;
                    margin:3%;")
 )
