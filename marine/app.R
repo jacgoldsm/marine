@@ -89,38 +89,38 @@ server <- shinyServer(function(input, output, session) {
     })
   
     total_dist <- reactive({
-      sum(na.omit(process_ship()$distance))
+      sum(process_ship()$distance, na.rm=TRUE)
     })
   
   
     average_speed <- reactive({
-        mean(process_ship()$SPEED)
+        mean(process_ship()$SPEED, na.rm=TRUE)
     })
     
     most_frequent_port <- reactive({
-      DescTools::Mode(process_ship()$PORT)
+      DescTools::Mode(process_ship()$PORT,na.rm=TRUE)
     })
     
   
     output$text1 <- renderText({
-    glue::glue("The maximum distance travelled by ship 
-                {input$select_vessel} between two observations
-                was {round(max_dist()$distance)} meters.")})
+      glue::glue("The maximum distance travelled by ship 
+                  {input$select_vessel} between two observations
+                  was {round(max_dist()$distance)} meters.")})
     
    output$text2 <- renderText({
-     glue::glue("The total distance travelled by ship 
-                {input$select_vessel} over this time period
-                was {round(total_dist())} meters.")
+      glue::glue("The total distance travelled by ship 
+                 {input$select_vessel} over this time period
+                 was {round(total_dist())} meters.")
    })
    
    output$text3 <- renderText({
-     glue::glue("The average speed at which this ship
-                travelled was {round(average_speed(), 2)} knots.")
+      glue::glue("The average speed at which this ship
+                  travelled was {round(average_speed(), 2)} knots.")
    })
     
    output$text4 <- renderText({
      glue::glue("The most frequent port that this ship was at
-                was {most_frequent_port()}.")
+                 was {most_frequent_port()}.")
    })
    
    

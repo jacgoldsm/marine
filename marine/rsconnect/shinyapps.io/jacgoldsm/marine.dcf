@@ -5,8 +5,8 @@ account: jacgoldsm
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3475341
-bundleId: 4098175
+bundleId: 4098269
 url: https://jacgoldsm.shinyapps.io/marine/
-when: 1610673440.00201
+when: 1610676079.45363
 asMultiple: FALSE
 asStatic: FALSE
